@@ -6,7 +6,7 @@
 class UnoCard : public Card
 {
 public:
-    explicit UnoCard(Colour colour, QString name, int drawCount, int value):Card(colour, name, drawCount, value){}
+    explicit UnoCard(COLOUR colour, QString name, int drawCount, int value):Card(colour, name, drawCount, value){}
 };
 
 #endif // UNOCARD_H

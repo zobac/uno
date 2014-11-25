@@ -1,46 +1,50 @@
 #include "card.h"
 
-Card::Card(Colour colour, QString name, int drawCount, int value):colour_(colour), name_(name), drawCount_(drawCount), value_(value)
+
+Card::Card(COLOUR colour, QString name, int drawCount, int value):colour_(colour), name_(name), drawCount_(drawCount), value_(value)
 {
 
 }
 
-Colour Card::getColour()
+COLOUR Card::getColour() const
 {
     return colour_;
 }
 
-QString Card::getName()
+QString Card::getName() const
 {
     return name_;
 }
 
-int Card::getDrawCount()
+int Card::getDrawCount() const
 {
     return drawCount_;
 }
 
-int Card::getValue()
+int Card::getValue() const
 {
     return value_;
 }
 
-void Card::print(std::ostream &os) const
+QString Card::toString() const
 {
-    os << "name:\t\t" << name_ << std::endl;
-    os << "colour\t\t" << colour_ << std::endl;
-    os << "drawCount\t\t" << drawCount_ << std::endl;
-    os << "point value\t\t" << value_ << std::endl;
+    std::ostringstream oss;
+
+    oss << colour_ << " ";
+    oss << name_.toStdString() << " ";
+    oss << drawCount_ << " ";
+    oss << value_ << " ";
+
+    return QString::fromStdString(oss.str());
 }
 
-std::string Card::toString() const
+std::ostream& operator <<(std::ostream& os, const Card& c)
 {
-    std::ostringstream ostr;
+    std::ostringstream oss;
 
-    ostr << colour_ << " ";
-    ostr << name_ << " ";
-    ostr << drawCount_ << " ";
-    ostr << value_ << " ";
-
-    return ostr.str();
+    oss << c.colour_ << " ";
+    oss << c.name_.toStdString() << " ";
+    oss << c.drawCount_ << " ";
+    oss << c.value_ << " ";
+    return os << oss.str();
 }
