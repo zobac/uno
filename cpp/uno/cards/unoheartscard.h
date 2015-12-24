@@ -5,8 +5,11 @@
 
 class UnoHeartsCard : public Card
 {
+
 public:
-    explicit UnoHeartsCard(COLOUR colour, QString name, int drawCount, int value):Card(colour, name, drawCount, value){}
+
+    UnoHeartsCard(COLOUR colour, QString name, int drawCount, int value, GAMEACTION gameAction):
+                Card(colour, name, drawCount, value, gameAction){}
 };
 
 #endif // UNOHEARTSCARD_H

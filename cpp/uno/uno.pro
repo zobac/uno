@@ -34,6 +34,7 @@ HEADERS  += mainwindow.h \
     decks/unocarddeck.h \
     decks/unoheartscarddeck.h \
     decks/christmasaveunodeck.h \
-    colours.h
+    colours.h \
+    gameaction.h
 
 FORMS    += mainwindow.ui

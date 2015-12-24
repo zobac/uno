@@ -2,6 +2,7 @@
 #define CARD_H
 
 #include "colours.h"
+#include "gameaction.h"
 #include <sstream>
 #include <QString>
 
@@ -9,22 +10,26 @@
 class Card
 {
 
-protected:
-    COLOUR  colour_;
-    QString name_;
-    int     drawCount_;
-    int     value_;
-
 public:
-    explicit Card(COLOUR, QString, int, int);
+
+    explicit Card(COLOUR colour, QString name, int drawCount, int value, GAMEACTION gameAction): colour_(colour), name_(name),
+                drawCount_(drawCount), value_(value), gameAction_(gameAction){}
     virtual ~Card(){}
     COLOUR getColour() const;
     QString getName() const;
     int getDrawCount() const;
     int getValue() const;
-    virtual QString toString() const;
+    int getGameAction() const;
+
     friend std::ostream& operator <<(std::ostream& os, const Card& c);
 
+private:
+
+    COLOUR  colour_;
+    QString name_;
+    int     drawCount_;
+    int     value_;
+    GAMEACTION gameAction_;
 };
 
 #endif // CARD_H

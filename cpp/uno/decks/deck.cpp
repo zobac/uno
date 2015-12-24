@@ -1,5 +1,45 @@
 #include "deck.h"
 
+using namespace std;
+
 Deck::Deck()
 {
+}
+
+void Deck::shuffle()
+{
+
+}
+
+void Deck::reshuffle(QList<Card> cards)
+{
+    cards_ = cards;
+    this->shuffle();
+}
+
+Card Deck::draw()
+{
+    return cards_.takeLast();
+}
+
+void Deck::stack(Card discard)
+{
+    cards_.append(discard);
+}
+
+bool Deck::isDiscard()
+{
+    return discard_;
+}
+
+std::ostream& operator <<(std::ostream& os, const Deck& d)
+{
+    QListIterator<Card> iter(d.cards_);
+    std::ostringstream oss;
+
+    while(iter.hasNext())
+    {
+        oss << iter.next() << endl;
+    }
+    return os << oss.str();
 }

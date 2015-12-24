@@ -1,10 +1,13 @@
 #ifndef UNOHEARTSCARDDECK_H
 #define UNOHEARTSCARDDECK_H
 
-class UnoHeartsCardDeck
+#include "deck.h"
+
+
+class UnoHeartsCardDeck : public Deck
 {
 public:
-    UnoHeartsCardDeck();
+    UnoHeartsCardDeck():Deck(){}
 };
 
 #endif // UNOHEARTSCARDDECK_H
