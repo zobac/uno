@@ -4,12 +4,12 @@
 //enum colour limits the card colour to these specific colours
 enum COLOUR
 {
-    BLACK,
     BLUE,
     RED,
-    GREEN,
     YELLOW,
-    PURPLE
+    GREEN,
+    PURPLE,
+    BLACK
 };
 
 #endif // COLOURS_H

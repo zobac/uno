@@ -4,11 +4,13 @@
 //enum gameaction defines actions triggered by a card being played
 enum GAMEACTION
 {
-    DRAW,
+    CHOOSE,
     SKIP,
     REVERSE,
     DITCH,
     PASS,
-    NONE
+    NONE,
+    CALLPURPLE,
+    CALLUNO
 };
 #endif // GAMEACTION_H

@@ -13,10 +13,11 @@ class Deck
 public:
     explicit    Deck();
     void        shuffle();
-    void        reshuffle(QList<Card> cards);
-    Card        draw();
-    void        stack(Card discard);
-    bool        isDiscard();
+    void        reshuffle(Deck deck);
+    Card        draw(); // return the top card
+    void        stack(Card discard); // add a card to the deck
+    bool        isDiscard(); // This deck is a discard pile
+    bool isEmpty() const;
 
     friend std::ostream& operator <<(std::ostream& os, const Deck& d);
 

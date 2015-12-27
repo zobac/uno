@@ -8,7 +8,8 @@
 #include "gameaction.h"
 #include "colours.h"
 #include <iostream>
-#include "decks/unoheartscarddeck.h"
+#include "decks/deck.h"
+#include "decks/deckfactory.h"
 
 using namespace std;
 
@@ -21,13 +22,12 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     qDebug();
-    
-    Card c = UnoCard(RED, "ZERO", 0, 0, NONE);
 
-    Deck d = UnoHeartsCardDeck();
+    DeckFactory df = DeckFactory();
 
-    d.stack(c);
+    Deck d = df.create(CHRISTMASAVE);
 
     cout << d << endl;
+
     return a.exec();
 }

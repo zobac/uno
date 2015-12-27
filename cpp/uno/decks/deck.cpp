@@ -11,9 +11,12 @@ void Deck::shuffle()
 
 }
 
-void Deck::reshuffle(QList<Card> cards)
+void Deck::reshuffle(Deck deck)
 {
-    cards_ = cards;
+    while(!deck.isEmpty())
+    {
+        this->stack(deck.draw());
+    }
     this->shuffle();
 }
 
@@ -31,6 +34,12 @@ bool Deck::isDiscard()
 {
     return discard_;
 }
+
+bool Deck::isEmpty() const
+{
+    return cards_.isEmpty();
+}
+
 
 std::ostream& operator <<(std::ostream& os, const Deck& d)
 {

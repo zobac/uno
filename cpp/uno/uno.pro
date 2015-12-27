@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     players/virtualplayer.cpp \
     decks/unocarddeck.cpp \
     decks/unoheartscarddeck.cpp \
-    decks/christmasaveunodeck.cpp
+    decks/christmasaveunodeck.cpp \
+    decks/deckfactory.cpp
 
 HEADERS  += mainwindow.h \
     cards/card.h \
@@ -35,6 +36,9 @@ HEADERS  += mainwindow.h \
     decks/unoheartscarddeck.h \
     decks/christmasaveunodeck.h \
     colours.h \
-    gameaction.h
+    gameaction.h \
+    decks/deckfactory.h \
+    decks/decktypes.h \
+    defines.h
 
 FORMS    += mainwindow.ui
