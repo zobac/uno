@@ -17,7 +17,9 @@ public:
     Card        draw(); // return the top card
     void        stack(Card discard); // add a card to the deck
     bool        isDiscard(); // This deck is a discard pile
-    bool isEmpty() const;
+    bool        isEmpty() const;
+
+    int         myrandom (int i);
 
     friend std::ostream& operator <<(std::ostream& os, const Deck& d);
 

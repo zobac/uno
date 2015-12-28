@@ -6,13 +6,14 @@ Deck::Deck()
 {
 }
 
-void Deck::shuffle()
-{
+void Deck::shuffle(){
 
+    std::srand(time(0));
+    std::random_shuffle(cards_.begin(), cards_.end());
 }
 
-void Deck::reshuffle(Deck deck)
-{
+void Deck::reshuffle(Deck deck){
+
     while(!deck.isEmpty())
     {
         this->stack(deck.draw());
@@ -20,13 +21,13 @@ void Deck::reshuffle(Deck deck)
     this->shuffle();
 }
 
-Card Deck::draw()
-{
+Card Deck::draw(){
+
     return cards_.takeLast();
 }
 
-void Deck::stack(Card discard)
-{
+void Deck::stack(Card discard){
+
     cards_.append(discard);
 }
 

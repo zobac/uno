@@ -31,26 +31,26 @@ Deck DeckFactory::create(DECKTYPE type){
         for(int j=0; j<4; j++){ // two of each colour blue, red, yellow, green
 
             for(int i=0; i<10; i++){ // create numbered cards
-                d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, NONE));
-                d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, NONE));
+                d.stack(UnoCard(colours_[j], names_[i], 0, i, NONE));
+                d.stack(UnoCard(colours_[j], names_[i], 0, i, NONE));
             }
 
             for(int i=0; i<3; i++){ // create game action cards
 
                 switch(i){
                 case 0:
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 2, 20, NONE));
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 2, 20, NONE));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 2, 20, NONE));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 2, 20, NONE));
                     break;
 
                 case 1:
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 0, 20, SKIP));
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 0, 20, SKIP));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 0, 20, SKIP));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 0, 20, SKIP));
                     break;
 
                 case 2:
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 0, 20, REVERSE));
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + actionCardNames_[i]), 0, 20, REVERSE));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 0, 20, REVERSE));
+                    d.stack(UnoCard(colours_[j], actionCardNames_[i], 0, 20, REVERSE));
                     break;
 
                 default:
@@ -79,15 +79,15 @@ Deck DeckFactory::create(DECKTYPE type){
                     switch(j){
 
                     case 3:
-                        d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, PASS));
+                        d.stack(UnoCard(colours_[j], names_[i], 0, i, PASS));
                         break;
 
                     case 4:
-                        d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, PASS));
+                        d.stack(UnoCard(colours_[j], names_[i], 0, i, PASS));
                         break;
 
                     default:
-                        d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, NONE));
+                        d.stack(UnoCard(colours_[j], names_[i], 0, i, NONE));
                         break;
                     }
                     break;
@@ -96,17 +96,17 @@ Deck DeckFactory::create(DECKTYPE type){
                     switch(j){
 
                     case 2:
-                        d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, DITCH));
+                        d.stack(UnoCard(colours_[j], names_[i], 0, i, DITCH));
                         break;
 
                     default:
-                        d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, NONE));
+                        d.stack(UnoCard(colours_[j], names_[i], 0, i, NONE));
                         break;
                     }
                     break;
 
                 default:
-                    d.stack(UnoCard(colours_[j], (colourNames_[j] + " " + names_[i]), 0, i, NONE));
+                    d.stack(UnoCard(colours_[j], names_[i], 0, i, NONE));
                     break;
                 }
             }

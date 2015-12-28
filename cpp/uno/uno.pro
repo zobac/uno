@@ -10,7 +10,7 @@ TARGET = uno
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES +=\
         mainwindow.cpp \
     cards/card.cpp \
     cards/unocard.cpp \
@@ -22,7 +22,10 @@ SOURCES += main.cpp\
     decks/unocarddeck.cpp \
     decks/unoheartscarddeck.cpp \
     decks/christmasaveunodeck.cpp \
-    decks/deckfactory.cpp
+    decks/deckfactory.cpp \
+    1591.cpp \
+    gamecontrol.cpp \
+    decks/hand.cpp
 
 HEADERS  += mainwindow.h \
     cards/card.h \
@@ -39,6 +42,8 @@ HEADERS  += mainwindow.h \
     gameaction.h \
     decks/deckfactory.h \
     decks/decktypes.h \
-    defines.h
+    defines.h \
+    gamecontrol.h \
+    decks/hand.h
 
 FORMS    += mainwindow.ui

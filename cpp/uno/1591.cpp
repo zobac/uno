@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
     DeckFactory df = DeckFactory();
 
     Deck d = df.create(CHRISTMASAVE);
-
-    cout << d << endl;
+   cout << d << endl;
 
     return a.exec();
 }

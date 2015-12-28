@@ -28,7 +28,7 @@ int Card::getGameAction() const
 std::ostream& operator <<(std::ostream& os, const Card& c)
 {
     std::ostringstream oss;
-
+    oss << c.colour_ << " ";
     oss << c.name_.toStdString() << ":\n\t";
     oss << "draw: " << c.drawCount_ << ",\n\t";
     oss <<  "points: " << c.value_ << ",\n\t";
