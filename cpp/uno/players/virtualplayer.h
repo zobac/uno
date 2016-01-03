@@ -1,10 +1,11 @@
 #ifndef VIRTUALPLAYER_H
 #define VIRTUALPLAYER_H
 
-class VirtualPlayer
+#include "player.h"
+class VirtualPlayer : public Player
 {
 public:
-    VirtualPlayer();
+    explicit VirtualPlayer(QString name):Player(name){}
 };
 
 #endif // VIRTUALPLAYER_H

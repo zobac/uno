@@ -12,14 +12,16 @@ class Card
 
 public:
 
-    explicit Card(COLOUR colour, QString name, int drawCount, int value, GAMEACTION gameAction): colour_(colour), name_(name),
-                drawCount_(drawCount), value_(value), gameAction_(gameAction){}
-    virtual ~Card(){}
-    COLOUR getColour() const;
-    QString getName() const;
-    int getDrawCount() const;
-    int getValue() const;
-    int getGameAction() const;
+    explicit    Card(COLOUR colour, QString name, int drawCount, int value, GAMEACTION gameAction): colour_(colour), name_(name),
+                    drawCount_(drawCount), value_(value), gameAction_(gameAction){}
+    virtual     ~Card(){}
+    COLOUR      getColour() const;
+    QString     getName() const;
+    int         getDrawCount() const;
+    int         getValue() const;
+    int         getGameAction() const;
+
+    bool        operator ==(const Card& c);
 
     friend std::ostream& operator <<(std::ostream& os, const Card& c);
 

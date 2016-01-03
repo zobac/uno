@@ -8,8 +8,16 @@
 class Player
 {
 public:
-    Player();
-    Player(QString name);
+    explicit Player(QString name);
+
+    void    draw(const Card &card);
+    void    discard(const Card &card);
+
+    int     getScore() const;
+    QString getName() const;
+    Hand    getHand() const;
+
+    friend std::ostream& operator <<(std::ostream& os, const Player& c);
 
 private:
 

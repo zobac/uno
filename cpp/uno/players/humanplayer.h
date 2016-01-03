@@ -1,10 +1,12 @@
 #ifndef HUMANPLAYER_H
 #define HUMANPLAYER_H
 
-class humanPlayer
+# include "player.h"
+
+class humanPlayer : public Player
 {
 public:
-    humanPlayer();
+    explicit humanPlayer(QString name):Player(name){}
 };
 
 #endif // HUMANPLAYER_H

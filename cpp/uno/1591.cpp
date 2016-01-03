@@ -3,13 +3,14 @@
 
 #include <QtCore/QCoreApplication>
 #include <QDebug>
-
-#include "cards/unocard.h"
-#include "gameaction.h"
-#include "colours.h"
 #include <iostream>
+
+#include "gameaction.h"
 #include "decks/deck.h"
 #include "decks/deckfactory.h"
+
+#include "players/player.h"
+
 
 using namespace std;
 
@@ -26,7 +27,20 @@ int main(int argc, char *argv[])
     DeckFactory df = DeckFactory();
 
     Deck d = df.create(CHRISTMASAVE);
-   cout << d << endl;
+
+    Player p("Jimmy");
+
+    p.draw(d.draw());
+    p.draw(d.draw());
+    p.draw(d.draw());
+
+    QList<Card> c = p.getHand().getCards();
+    cout << p << endl;
+
+    p.discard(c[0]);
+
+    cout << p << endl;
+
 
     return a.exec();
 }

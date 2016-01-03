@@ -2,8 +2,7 @@
 #define COLOURS_H
 
 //enum colour limits the card colour to these specific colours
-enum COLOUR
-{
+enum COLOUR{
     BLUE,
     RED,
     YELLOW,

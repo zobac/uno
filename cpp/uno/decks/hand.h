@@ -2,18 +2,25 @@
 #define HAND_H
 
 #include <QList>
+
+#include "cards/card.h"
+
 class Hand{
 
 public:
+
     Hand();
-    int     getScore();
-    int     setScore();
-    Card    discard(int index);
-    void    Draw(Card card);
+    int             getScore() const;
+    void            discard(const Card &card);
+    void            draw(const Card &card);
+    int             getHandSize() const;
+    QList<Card>     getCards() const;
+
+    friend std::ostream& operator <<(std::ostream& os, const Hand& h);
 
 private:
-    Qlist<Card> cards_;
-    int         score_;
+    QList<Card>     cards_;
+
 
 };
 

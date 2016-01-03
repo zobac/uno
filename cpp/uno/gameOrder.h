@@ -1,0 +1,10 @@
+#ifndef GAMEORDER_H
+#define GAMEORDER_H
+
+enum GAMEORDER{
+
+    CLOCKWISE,
+    COUNTERCLOCKWISE
+};
+
+#endif // GAMEORDER_H

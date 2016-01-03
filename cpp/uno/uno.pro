@@ -44,6 +44,7 @@ HEADERS  += mainwindow.h \
     decks/decktypes.h \
     defines.h \
     gamecontrol.h \
-    decks/hand.h
+    decks/hand.h \
+    gameOrder.h
 
 FORMS    += mainwindow.ui
